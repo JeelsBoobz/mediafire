@@ -38,7 +38,7 @@ function mediafiredl()
         rm -f "${infofile}" 2> /dev/null
          wget -O "${infofile}" "${url}" \
         --quiet
-        filename="$( grep "href=\"https://download" /sdcard/a.txt | sed -e 's/.*\"\(.*\)\".*/\1/' | cut -d"/" -f6 | sed "s/\";//g" | decodeURL )"
+        filename="$( grep "href=\"https://download" "${infofile)" | sed -e 's/.*\"\(.*\)\".*/\1/' | cut -d"/" -f6 | sed "s/\";//g" | decodeURL )"
     done
 
     if [ "${retry}" -ge 10 ]
